@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+            html {
+                line-height: 1.15;
+                -webkit-text-size-adjust: 100%
+            }
+
+            body {
+                margin: 0
+            }
+
+            main {
+                display: block
+            }
+
+            h1 {
+                font-size: 2em;
+                margin: 0.67em 0
+            }
+
+            hr {
+                box-sizing: content-box;
+                height: 0;
+                overflow: visible
+            }
+
+            pre {
+                font-family: monospace, monospace;
+                font-size: 1em
+            }
+
+            a {
+                background-color: transparent
+            }
+
+            abbr[title] {
+                border-bottom: none;
+                text-decoration: underline;
+                text-decoration: underline dotted
+            }
+
+            b,strong {
+                font-weight: bolder
+            }
+
+            code,kbd,samp {
+                font-family: monospace, monospace;
+                font-size: 1em
+            }
+
+            small {
+                font-size: 80%
+            }
+
+            sub,sup {
+                font-size: 75%;
+                line-height: 0;
+                position: relative;
+                vertical-align: baseline
+            }
+
+            sub {
+                bottom: -0.25em
+            }
+
+            sup {
+                top: -0.5em
+            }
+
+            img {
+                border-style: none
+            }
+
+            button,input,optgroup,select,textarea {
+                font-family: inherit;
+                font-size: 100%;
+                line-height: 1.15;
+                margin: 0
+            }
+
+            button,input {
+                overflow: visible
+            }
+
+            button,select {
+                text-transform: none
+            }
+
+            button,[type="button"],[type="reset"],[type="submit"] {
+                -webkit-appearance: button
+            }
+
+            button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {
+                border-style: none;
+                padding: 0
+            }
+
+            button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring {
+                outline: 1px dotted ButtonText
+            }
+
+            fieldset {
+                padding: 0.35em 0.75em 0.625em
+            }
+
+            legend {
+                box-sizing: border-box;
+                color: inherit;
+                display: table;
+                max-width: 100%;
+                padding: 0;
+                white-space: normal
+            }
+
+            progress {
+                vertical-align: baseline
+            }
+
+            textarea {
+                overflow: auto
+            }
+
+            [type="checkbox"],[type="radio"] {
+                box-sizing: border-box;
+                padding: 0
+            }
+
+            [type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button {
+                height: auto
+            }
+
+            [type="search"] {
+                -webkit-appearance: textfield;
+                outline-offset: -2px
+            }
+
+            [type="search"]::-webkit-search-decoration {
+                -webkit-appearance: none
+            }
+
+            ::-webkit-file-upload-button {
+                -webkit-appearance: button;
+                font: inherit
+            }
+
+            details {
+                display: block
+            }
+
+            summary {
+                display: list-item
+            }
+
+            template {
+                display: none
+            }
+
+            [hidden] {
+                display: none
+            }
+
+            @font-face {
+                font-family: 'IBM Plex';
+                src: url("/fonts/IBMPlexSansVar-Roman.woff2");
+                font-weight: 100 700
+            }
+
+            @font-face {
+                src: url("/fonts/SchijnVariableGX.woff2");
+                font-family: 'Schijn Variable';
+                font-style: normal
+            }
+
+            * {
+                margin: 0;
+                padding: 0
+            }
+
+            ::-moz-selection {
+                background-color: #c1a2e7;
+                color: #6651a6
+            }
+
+            ::selection {
+                background-color: #c1a2e7;
+                color: #6651a6
+            }
+
+            html {
+                font-size: 100%
+            }
+
+            body {
+                --bg-color: white;--bg-color-end: white;--featureColorAccent: white;--featureColorReverse: black;min-height: 100vh;
+                font-family: "IBM Plex","Arial",sans-serif;
+                font-size: 100%;
+                font-weight: 353;
+                line-height: 1.8;
+                text-align: center;
+                color: white;
+                background: linear-gradient(var(--bg-color) 50%, var(--bg-color-end))
+            }
+
+            header {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                padding-top: 100px;
+                justify-content: center
+            }
+
+            .home header {
+                min-height: 80vh;
+                padding-top: 1.5rem
+            }
+
+            .posts h1::after {
+                content: "";
+                width: 20%;
+                height: 1px;
+                background: rgba(255,255,255,0.5);
+                left: 50%;
+                bottom: 0;
+                position: absolute;
+                transform: translateX(-50%)
+            }
+
+            nav {
+                position: absolute;
+                top: 42px;
+                flex: none
+            }
+
+            @media screen and (min-width: 500px) {
+                nav {
+                    top:0
+                }
+            }
+
+            nav a:hover,nav a:focus {
+                color: #4fe6d9;
+                background: none
+            }
+
+            a {
+                color: black;
+                text-decoration: underline
+            }
+
+            a:hover,a:focus {
+                color: white;
+                background: black
+            }
+
+            h1,h2,h3 {
+                font-family: "IBM Plex","Helvetica","Arial",sans-serif;
+                font-weight: 700;
+                line-height: 1;
+                margin: 1.125rem 0;
+                color: currentColor
+            }
+
+            h1 {
+                font-size: 3.125rem;
+                font-weight: 100;
+                margin-top: 2.75rem;
+                margin-bottom: 1.125rem;
+                line-height: 1;
+                padding-bottom: .75rem;
+                margin: 1.125rem;
+                position: relative;
+                color: white
+            }
+
+            .home h1 {
+                --axis: 17;--axis2: 30;font-size: 3.125rem;
+                font-weight: 100;
+                margin-top: 2.75rem;
+                margin-bottom: 1.125rem;
+                line-height: 1;
+                padding-bottom: .75rem;
+                margin: 1.125rem;
+                font-family: "Schijn Variable", "Adobe NotDef";
+                font-variation-settings: "wght" var(--axis);
+                position: relative;
+                color: var(--featureColorAccent);
+                transform: translateY(2rem)
+            }
+
+            @media screen and (min-width: 450px) {
+                .home h1 {
+                    font-size:5rem
+                }
+            }
+
+            @media screen and (min-width: 768px) {
+                .home h1 {
+                    font-size:10.625rem
+                }
+            }
+
+            .home h1::before {
+                content: attr(data-heading);
+                position: absolute;
+                color: var(--featureColorReverse);
+                font-variation-settings: "wght" var(--axis2);
+                left: 0
+            }
+
+            h2 {
+                font-size: 3.125rem;
+                margin: .75rem 0;
+                font-weight: 300
+            }
+
+            h3 {
+                text-transform: uppercase;
+                margin-top: 2.75rem;
+                font-size: 1.875rem;
+                padding-bottom: 2px;
+                font-weight: 200
+            }
+
+            .listing {
+                --featureColor: $page-color;display: grid;
+                width: 100%;
+                grid-template-columns: 1fr;
+                align-self: center
+            }
+
+            @media screen and (min-width: 768px) {
+                .listing {
+                    grid-template-columns:1fr 1fr 1fr
+                }
+            }
+
+            .listing .item {
+                background: var(--featureColor);
+                display: flex;
+                height: 50vh;
+                align-content: center;
+                box-shadow: inset 34px 0px 50px -46px rgba(0,0,0,0.46);
+                justify-content: center
+            }
+
+            @media screen and (min-width: 768px) {
+                .listing .item {
+                    grid-column:2 / span 2;
+                    height: 100vh
+                }
+            }
+
+            .listing .item img {
+                width: 80%;
+                display: block;
+                align-self: center
+            }
+
+            .listing .sidebar {
+                background: #fff;
+                grid-column: 1;
+                z-index: 1;
+                display: flex;
+                align-content: center;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+                color: #6651a6;
+                padding: 1.5rem 0
+            }
+
+            .listing .sidebar::after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-bottom: 10vh solid var(--featureColor);
+                border-left: 10vh solid transparent;
+                bottom: 0;
+                position: absolute;
+                right: 0
+            }
+
+            @media screen and (min-width: 768px) {
+                .listing .sidebar::after {
+                    border-bottom:40vh solid var(--featureColor);
+                    border-left: 40vh solid transparent
+                }
+            }
+
+            .listing .sidebar h2 {
+                color: var(--featureColor);
+                font-size: 2rem;
+                font-weight: 120
+            }
+
+            @media screen and (min-width: 768px) {
+                .listing .sidebar h2 {
+                    font-size:4rem
+                }
+            }
+
+            .listing .sidebar p {
+                color: #333
+            }
+
+            .listing .sidebar time {
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                position: relative
+            }
+
+            .listing .sidebar a {
+                color: var(--featureColor);
+                font-weight: 800;
+                transition: background 250ms ease-out
+            }
+
+            .listing .sidebar a:hover,.listing .sidebar a:focus {
+                background: #ecb2ff;
+                color: black
+            }
+
+            .post-button {
+                border: 2px solid currentColor;
+                background: transparent;
+                padding: .25rem;
+                width: 6.25rem;
+                display: block;
+                text-decoration: none;
+                margin: 1.125rem auto;
+                position: relative;
+                z-index: 2
+            }
+
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                gap: .75rem;
+                width: 100%
+            }
+
+            .nav {
+                padding-top: 1.5rem;
+                list-style: none;
+                display: flex;
+                z-index: 2
+            }
+
+            .nav li {
+                margin: 0 1.125rem
+            }
+
+            .nav a {
+                text-align: left;
+                color: #c1a2e7;
+                text-decoration: none;
+                font-weight: 700;
+                display: block;
+                line-height: 1;
+                transition: all 50ms ease;
+                border: 1px solid transparent;
+                letter-spacing: 0.062rem;
+                position: relative
+            }
+
+            .nav a::after {
+                content: "";
+                width: 20px;
+                height: 1px;
+                background: #c1a2e7;
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                transition: width 150ms ease-in-out
+            }
+
+            .nav a:hover,.nav a:focus {
+                color: white
+            }
+
+            .nav a:hover:after,.nav a:focus:after {
+                background: white;
+                width: 100%
+            }
+
+            .container {
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+                max-width: 900px;
+                text-align: left
+            }
+
+            header {
+                margin-bottom: 2.75rem
+            }
+
+            .brand {
+                display: flex;
+                align-items: center
+            }
+
+            .logo {
+                width: 100px;
+                height: auto;
+                fill: white
+            }
+
+            .intro {
+                font-size: 1.5rem;
+                margin-bottom: 5.5rem;
+                line-height: 1.2;
+                max-width: 48ch;
+                font-weight: 700
+            }
+
+            .demo {
+                font-size: 100px;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                letter-spacing: 0.6rem;
+                margin: 7rem 0;
+                position: relative;
+                text-transform: uppercase;
+                line-height: 1
+            }
+
+            @media screen and (min-width: 430px) {
+                .demo {
+                    font-size:150px
+                }
+            }
+
+            @media screen and (min-width: 700px) {
+                .demo {
+                    font-size:200px
+                }
+            }
+
+            .nav a {
+                color: white
+            }
+
+            .post {
+                background: white;
+                padding: 1.875rem;
+                color: black;
+                width: 95%;
+                max-width: 700px;
+                margin: 1.875rem auto;
+                text-align: left
+            }
+
+            @media screen and (min-width: 700px) {
+                .post {
+                    margin-top:6.875rem;
+                    padding: 5.9375rem
+                }
+            }
+
+            .post p {
+                margin-bottom: 1.5rem;
+                line-height: 1.5;
+                font-size: 18px;
+                font-weight: 200
+            }
+
+            .post :not(pre)>code {
+                background: ghostwhite;
+                border: 1px solid gainsboro;
+                border-radius: 3px;
+                padding: 0 2px;
+                font-size: 15px;
+                color: #5c5c5c
+            }
+
+            .details {
+                text-align: left;
+                position: relative;
+                line-height: 1.5;
+                font-style: italic;
+                font-weight: 200;
+                border-bottom: 1px solid black;
+                margin-bottom: 1.125rem
+            }
+
+            @media screen and (min-width: 700px) {
+                .details {
+                    max-width:calc(800px + 76px)
+                }
+            }
+
+            .details p+p {
+                margin-top: 1.125rem
+            }
+
+            .details a {
+                display: inline-block;
+                padding: 0 2px;
+                transition: all 150ms ease;
+                background: transparent;
+                color: black
+            }
+
+            .details a:hover,.details a:focus {
+                color: white;
+                background: black
+            }
+
+            #toggle {
+                border: 1px solid currentColor;
+                background: transparent;
+                padding: .625rem;
+                color: currentColor;
+                font-size: .75rem;
+                text-transform: uppercase;
+                flex-grow: 0;
+                cursor: pointer;
+                align-self: center;
+                position: absolute;
+                top: 1rem;
+                left: 1rem
+            }
+
+            #toggle:hover,#toggle:focus {
+                background: darkslategrey;
+                color: white
+            }
+
+            #toggle:active {
+                transform: translate(0, 2px)
+            }
+
+            .no-animation .demo {
+                animation: none
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .demo {
+                    animation: none
+                }
+            }
+
+            .video-wrapper {
+                max-width: 876px;
+                margin: 0 auto
+            }
+
+            .video {
+                position: relative;
+                padding-bottom: 56.25%;
+                padding-top: 25px;
+                height: 0
+            }
+
+            .video iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%
+            }
+
+            footer {
+                margin-top: 3.125rem;
+                padding: 1.875rem 0;
+                font-size: .75rem;
+                color: currentColor
+            }
+
+            footer a {
+                color: currentColor;
+                border-bottom: solid 1px currentColor
+            }
+
+            footer a a:hover,footer a a:focus {
+                background: darkslategrey;
+                color: white;
+                border-bottom: solid 1px white
+            }
+
+            code[class*="language-"],pre[class*="language-"] {
+                color: #393A34;
+                font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+                direction: ltr;
+                text-align: left;
+                white-space: pre;
+                word-spacing: normal;
+                word-break: normal;
+                font-size: 0.95em;
+                line-height: 1.2em;
+                -moz-tab-size: 4;
+                -o-tab-size: 4;
+                tab-size: 4;
+                -webkit-hyphens: none;
+                -moz-hyphens: none;
+                -ms-hyphens: none;
+                hyphens: none
+            }
+
+            pre[class*="language-"]::-moz-selection,pre[class*="language-"] ::-moz-selection,code[class*="language-"]::-moz-selection,code[class*="language-"] ::-moz-selection {
+                background: #b3d4fc
+            }
+
+            pre[class*="language-"]::selection,pre[class*="language-"] ::selection,code[class*="language-"]::selection,code[class*="language-"] ::selection {
+                background: #b3d4fc
+            }
+
+            pre[class*="language-"] {
+                padding: 1em;
+                margin: .5em 0;
+                overflow: auto;
+                background-color: white
+            }
+
+            :not(pre)>code[class*="language-"] {
+                padding: .2em;
+                padding-top: 1px;
+                padding-bottom: 1px;
+                background: #f8f8f8;
+                border: 1px solid #dddddd
+            }
+
+            .token.comment,.token.prolog,.token.doctype,.token.cdata {
+                color: #999988;
+                font-style: italic
+            }
+
+            .token.namespace {
+                opacity: .7
+            }
+
+            .token.string,.token.attr-value {
+                color: #e3116c
+            }
+
+            .token.punctuation,.token.operator {
+                color: #393A34
+            }
+
+            .token.entity,.token.url,.token.symbol,.token.number,.token.boolean,.token.variable,.token.constant,.token.property,.token.regex,.token.inserted {
+                color: #36acaa
+            }
+
+            .token.atrule,.token.keyword,.token.attr-name,.language-autohotkey .token.selector {
+                color: #00a4db
+            }
+
+            .token.function,.token.deleted,.language-autohotkey .token.tag {
+                color: #9a050f
+            }
+
+            .token.tag,.token.selector,.language-autohotkey .token.keyword {
+                color: #00009f
+            }
+
+            .token.important,.token.function,.token.bold {
+                font-weight: bold
+            }
+
+            .token.italic {
+                font-style: italic
+            }
+        </style>
+        <title>Fira Code Google API Demo</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+        <link rel="manifest" href="/images/icons/site.webmanifest">
+        <link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#1c1c40">
+        <link rel="shortcut icon" href="/images/icons/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="Variable Fonts &raquo; Feed" href="https://variablefonts.dev/feed.xml">
+        <meta name="msapplication-TileColor" content="#1c1c40">
+        <meta name="msapplication-config" content="/images/icons/browserconfig.xml">
+        <meta name="theme-color" content="#1c1c40">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Fira Code Google API Demo">
+        <meta property="og:url" content="https://variablefonts.dev/posts/fira-code-google-api-demo">
+        <meta property="og:image" content="https://variablefonts.dev/images/fira-code-google-api-demo.png">
+        <meta property="og:description" content="Demoing the Google V2 API for accessing variable fonts">
+        <meta property="article:author" content="Mandy Michael">
+        <link href="https://fonts.googleapis.com/css2?family=Fira%20Code:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+    <body class="posts" style="--bg-color: #171515;
+    --bg-color-end: #699f39;
+    --featureColorAccent: #0; --featureColorReverse: #ffffff">
+        <div>
+            <header>
+                <nav>
+                    <ul class="nav">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/getting-started">Getting Started</a>
+                        </li>
+                        <li>
+                            <a href="/about">About</a>
+                        </li>
+                    </ul>
+                </nav>
+                <h1 class="site-title" data-heading="Fira Code Google API Demo">Fira Code Google API Demo</h1>
+            </header>
+            <style>
+                body {
+                    background: #ac6cab;
+                    background: linear-gradient(180deg, #ac6cab 10%, #d6cad0 32%, #e0e0d8 42%, #dad3d3 61%, #65809c 100%)
+                }
+
+                .demo {
+                    font-family: 'Fira Code', mono-space;
+                    font-weight: 300;
+                    font-size: 6rem;
+                    text-shadow: 2px -1px 20px rgba(0,0,0,0.3);
+                    text-transform: uppercase;
+                    margin: 0;
+                    color: #fff;
+                    text-align: center;
+                    display: block
+                }
+
+                .demo.splitting .char {
+                    display: inline-block;
+                    animation-name: bounceLetters;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+                    animation-delay: calc(0.25s + var(--char-index) * 0.1s)
+                }
+
+                .no-animation .demo.splitting .char {
+                    animation: none
+                }
+
+                @keyframes bounceLetters {
+                    0% {
+                        font-weight: 300;
+                        transform: scale(1, 1) translateY(0)
+                    }
+
+                    10% {
+                        transform: scale(1.1, 0.9) translateY(0)
+                    }
+
+                    30% {
+                        transform: scale(0.9, 1.1) translateY(-20px)
+                    }
+
+                    50% {
+                        font-weight: 500;
+                        transform: scale(1.05, 0.95) translateY(0)
+                    }
+
+                    57% {
+                        transform: scale(1, 1) translateY(-7px)
+                    }
+
+                    64% {
+                        transform: scale(1, 1) translateY(0)
+                    }
+
+                    100% {
+                        font-weight: 300;
+                        transform: scale(1, 1) translateY(0)
+                    }
+                }
+            </style>
+            <p>
+                <button id="toggle">Toggle Animation</button>
+            </p>
+            <section>
+                <p contenteditable data-text="Fira Code Variable" data-splitting class="demo" id="fira-google-api">Fira Code Variable</p>
+            </section>
+            <main class="post">
+                <h2>Using the Google API to access variable fonts.</h2>
+                <section class="details">
+                    <p>
+                        <a href="https://fonts.google.com/specimen/Fira+Code?selection.family=Fira+Code" target="_blank">Fira Code</a>
+                        by Multiple Designers is Open source.<br>
+                        Code by 
+                        <a href="https://twitter.com/Mandy_Kerr" target="_blank">
+                            <em>Mandy Michael</em>
+                        </a>
+                        available on <a href="https://codepen.io/mandymichael/pen/OJLrgdv">Codepen</a>
+                    </p>
+                </section>
+                <p>
+                    The <a href="https://fonts.google.com/">Google Fonts</a>
+                    website is a great resource and with the ever increasing interest in variable fonts the question often comes up, will Google Fonts have variable fonts, and if so how will we use them?
+                </p>
+                <p>Well, the good news is, yes, Google Fonts will have variable fonts, and more importantly, they have released an updated version of their API that will enable you to use variable fonts to their full potential.</p>
+                <p>
+                    Google made the announcement of the new API at ATypI Tokyo (2019) and released a <a href="https://codepen.io/nlwilliams/full/JjPJewp">Codepen Demo</a>
+                    with some examples of the currently available variable fonts. I'll do a super quick run down, but Jason Pamental has written a great post that goes into some more depth that you can check out on medium if you like: <a href="https://medium.com/web-typography-news/variable-fonts-the-new-google-fonts-api-d442e9a0a255">Variable fonts &amp;the new Google Fonts API</a>
+                </p>
+                <p>Having a look at the Codepen the V2 API it's pretty straightforward to use and doesn't deviate too much from the current implementation of the Google Fonts API.</p>
+                <p>
+                    You can use the api with <code>import</code>
+                    in your css or with the external resource <code>link</code>
+                    element in your html. I usually use <code>link</code>
+                    myself so I was pleased both of those options remained.
+                </p>
+                <pre class="language-html">
+                    <code class="language-html">
+                        <span class="token tag">
+                            <span class="token tag">
+                                <span class="token punctuation">&lt;</span>
+                                link
+                            </span>
+                            <br>
+                            <span class="highlight-line">
+                                <span class="token attr-name">href</span>
+                                <span class="token attr-value">
+                                    <span class="token punctuation">=</span>
+                                    <span class="token punctuation">"</span>
+                                    https://fonts.googleapis.com/css2?family=Fira%20Code:wght@300..700 &amp;display=swap<span class="token punctuation">"</span>
+                                </span>
+                            </span>
+                            <br>
+                            <span class="highlight-line">
+                                <span class="token attr-name">rel</span>
+                                <span class="token attr-value">
+                                    <span class="token punctuation">=</span>
+                                    <span class="token punctuation">"</span>
+                                    stylesheet<span class="token punctuation">"</span>
+                                </span>
+                            </span>
+                            <br>
+                            <span class="token punctuation">></span>
+                        </span>
+                    </code>
+                </pre>
+                <pre class="language-css">
+                    <code class="language-css">
+                        <span class="highlight-line">
+                            <span class="token atrule">
+                                <span class="token rule">@import</span>
+                                <span class="token function">url</span>
+                                <span class="token punctuation">(</span>
+                                <span class="token string">'https://fonts.googleapis.com/css2?family=Fira%20Code:wght@300..700 &amp;display=swap'</span>
+                                <span class="token punctuation">)</span>
+                                <span class="token punctuation">;</span>
+                            </span>
+                        </span>
+                    </code>
+                </pre>
+                <p>As far as changes go to how we reference the fonts themselves, there are a couple of differences. The way we specify the font family is still the same, but the way we request the weight, or other axis is a little different.</p>
+                <p>Previously we would have done something like the example below, where the font weights or values were separated by commas.</p>
+                <pre class="language-html">
+                    <code class="language-html">
+                        <span class="highlight-line">https://fonts.googleapis.com/css?family=Fira+Code:400,700 &amp;display=swap</span>
+                    </code>
+                </pre>
+                <p>
+                    In the new api we have to specify the axis e.g. <code>wght</code>
+                    and the value, where multiple values are separated by a semi-colon. This is how we would use the API for your standard, non-variable, fonts.
+                </p>
+                <pre class="language-html">
+                    <code class="language-html">
+                        <span class="highlight-line">css2?family=Fira%20Code:wght@300;700</span>
+                    </code>
+                </pre>
+                <p>If you want make use of the full range of weights available in a variable font you can request them a little differently, they are known in the api as Axis value groups (or tuples), they cannot overlap or touch and they must be sorted in numerical order.</p>
+                <pre class="language-html">
+                    <code class="language-html">
+                        <span class="highlight-line">css2?family=Fira%20Code:wght@300...700</span>
+                    </code>
+                </pre>
+                <p>
+                    When it comes to using the font in your actual css, from here everything works exactly the same, we can set the <code>font-family</code>
+                    on our selector and choose a weight between the range we requested from the Google API.
+                </p>
+                <pre class="language-css">
+                    <code class="language-css">
+                        <span class="highlight-line">
+                            <span class="token selector">h1</span>
+                            <span class="token punctuation">{</span>
+                        </span>
+                        <br>
+                        <span class="highlight-line">
+                            <span class="token property">font-family</span>
+                            <span class="token punctuation">:</span>
+                            <span class="token string">"Fira Code"</span>
+                            <span class="token punctuation">;</span>
+                        </span>
+                        <br>
+                        <span class="highlight-line">
+                            <span class="token property">font-weight</span>
+                            <span class="token punctuation">:</span>
+                            278<span class="token punctuation">;</span>
+                        </span>
+                        <br>
+                        <span class="highlight-line">
+                            <span class="token punctuation">}</span>
+                        </span>
+                    </code>
+                </pre>
+                <p>
+                    You can see the full implementation in the <a href="https://codepen.io/mandymichael/pen/OJLrgdv">Codepen</a>
+                    example.
+                </p>
+                <p>Have fun and make cool things.</p>
+                <p>Mandy</p>
+            </main>
+            <footer>
+                <p>
+                    Made by <a href="https://twitter.com/mandy_kerr" target="_blank">Mandy Michael</a>
+                    , supported by <a href="https://instagram.com/adognamedjello" target="_blank">Jello</a>
+                    .
+                </p>
+            </footer>
+            <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+            <script>
+                // Content Editable Demos
+                if (document.getElementById("demoText")) {
+                    var element = document.getElementById("demoText");
+
+                    element.addEventListener("input", function() {
+                        this.setAttribute("data-text", this.innerText);
+                    });
+                }
+
+                // Animation Toggle
+                if (document.getElementById('toggle')) {
+                    document.getElementById('toggle').addEventListener('click', function() {
+                        if (document.body.classList.contains("no-animation")) {
+                            document.body.classList.remove("no-animation");
+                        } else {
+                            document.body.classList.add("no-animation");
+                        }
+                    });
+                }
+
+                // Homepage Effect with gem font
+                var homeHeadline = document.querySelector("h1");
+
+                const minAxisValue = 1;
+                const maxAxisValue = 30;
+
+                const minAxisValue2 = 30;
+                const maxAxisValue2 = 1;
+
+                const minEventValue = 0;
+                const maxEventValue = 1000;
+
+                homeHeadline.style.setProperty("--axis", 0);
+                homeHeadline.style.setProperty("--axis2", 0);
+
+                document.addEventListener('mousemove', function(e) {
+                    setPosition(e);
+                });
+
+                document.addEventListener('touchmove', function(e) {
+                    setPosition(e);
+                });
+
+                function setPosition(e) {
+                    fluidAxisVariation(minAxisValue, maxAxisValue, minEventValue, maxEventValue, e.pageX, "--axis", homeHeadline);
+                    fluidAxisVariation(minAxisValue2, maxAxisValue2, minEventValue, maxEventValue, e.pageY, "--axis2", homeHeadline);
+                }
+
+                // Variable Light Sensor Demo
+                function getLightSensor() {
+                    const minAxisValue = 300;
+                    const maxAxisValue = 20;
+
+                    const minEventValue = 20;
+                    const maxEventValue = 300;
+
+                    const sensorElement = document.getElementById("light-sensor");
+
+                    sensorElement.style.setProperty("--axis", 20);
+
+                    if ('AmbientLightSensor'in window) {
+                        const sensor = new AmbientLightSensor();
+                        sensor.onreading = ()=>{
+                            fluidAxisVariation(minAxisValue, maxAxisValue, minEventValue, maxEventValue, sensor.illuminance, "--axis", sensorElement);
+                        }
+                        ;
+                        sensor.onerror = (event)=>{
+                            console.log(event.error.name, event.error.message);
+                        }
+                        ;
+                        sensor.start();
+                    }
+                }
+
+                if (document.getElementById("light-sensor")) {
+                    getLightSensor();
+                }
+
+                // Bouncy Fira Code
+
+                if (document.getElementById("fira-google-api")) {
+                    Splitting();
+                }
+
+                // Resize to fit
+                if (document.getElementById("resize-to-fit")) {
+
+                    const box = document.getElementById("box");
+                    const text = document.getElementById("resize-to-fit");
+
+                    function resizeBox() {
+                        calcTextWidth();
+                        calcTextSize();
+                    }
+                    resizeBox();
+
+                    new ResizeObserver(resizeBox).observe(box);
+
+                    function calcTextWidth() {
+                        const parentContainerWidth = text.parentNode.clientWidth;
+                        const currentTextWidth = text.scrollWidth;
+                        const currentFontStretch = parseInt(window.getComputedStyle(text).fontStretch);
+                        const newValue = Math.min(Math.max(300, (parentContainerWidth / currentTextWidth) * currentFontStretch), 500)
+
+                        text.style.setProperty('--fontStretch', newValue + '%');
+                    }
+
+                    function calcTextSize() {
+                        const parentContainerWidth = text.parentNode.clientWidth;
+                        const currentTextWidth = text.scrollWidth;
+                        const currentFontSize = parseInt(window.getComputedStyle(text).fontSize);
+                        const newValue = Math.min(Math.max(16, (parentContainerWidth / currentTextWidth) * currentFontSize), 500)
+
+                        text.style.setProperty('--fontSize', newValue + 'px');
+                    }
+
+                }
+
+                // Fluid Axis Variation
+                function fluidAxisVariation(minimumAxisValue, maximumAxisValue, minimumEventValue, maximumEventValue, eventValue, axisCustomPropertyName, element) {
+
+                    const minAxisValue = minimumAxisValue;
+                    const maxAxisValue = maximumAxisValue;
+                    const minEventValue = minimumEventValue;
+                    const maxEventValue = maximumEventValue;
+                    const currentEventValue = eventValue;
+
+                    const eventPercent = (currentEventValue - minEventValue) / (maxEventValue - minEventValue);
+                    const fontAxisScale = eventPercent * (minAxisValue - maxAxisValue) + maxAxisValue;
+
+                    const newAxisValue = currentEventValue > maxEventValue ? minAxisValue : currentEventValue < minEventValue ? maxAxisValue : fontAxisScale;
+
+                    element.style.setProperty(axisCustomPropertyName, newAxisValue);
+
+                }
+            </script>
+        </div>
+    </body>
+</html>

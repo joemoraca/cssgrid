@@ -1,0 +1,88 @@
+html {
+  font-size: 100%;
+  color: #eaeef7;
+}
+
+body {
+  background-color: #eaeef7;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239C92AC" fill-opacity="0.4" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
+}
+
+section {
+  --weight: 200;
+  --width: 85;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr minmax(20ch, 60ch) 1fr 1fr;
+  margin: 4rem;
+  grid-gap: 15px;
+}
+
+h1 {
+  font-family: 'IBM Plex';
+  grid-column: 1 / 4;
+  grid-row: 1;
+  margin: 0;
+  font-size: calc((2 * 1em ) + (3.5 - 1) * ((100vw - (20 * 1em)) / (80 - 20)));
+  color: black;
+  position: relative;
+  font-variation-settings: "wdth" var(--width);
+}
+h1 span {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(75%, rgba(242, 46, 42, 0)), color-stop(75%, #f22e2a), color-stop(80%, #f22e2a), color-stop(80%, rgba(242, 46, 42, 0)));
+  background-image: linear-gradient(to bottom, rgba(242, 46, 42, 0) 75%, #f22e2a 75%, #f22e2a 80%, rgba(242, 46, 42, 0) 80%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
+  color: transparent;
+}
+h1::after {
+  content: attr(data-text);
+  color: black;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+p {
+  font-family: 'IBM Plex';
+  font-size: calc((0.9 * 1em ) + (1.5 - 1) * ((100vw - (20 * 1em)) / (80 - 20)));
+  font-weight: var(--weight);
+  line-height: 1.33;
+  color: black;
+  grid-column: 2 / 3;
+  margin: 0;
+}
+p:first-of-type {
+  color: #f22e2a;
+  line-height: 1.5;
+  grid-column: 1;
+  grid-row: 2 / 4;
+  font-size: calc((0.9 * 1em ) + (1.7 - 1) * ((100vw - (20 * 1em)) / (80 - 20)));
+  position: relative;
+}
+p:first-of-type:after {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+}
+p:nth-child(3) {
+  font-weight: calc(var(--weight) + 300);
+  font-size: calc((0.9 * 1em ) + (1.8 - 1) * ((100vw - (20 * 1em)) / (80 - 20)));
+}
+
+@font-face {
+  font-family: 'IBM Plex';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/IBMPlexSansVar-Roman.woff2") format("woff-variations");
+  font-style: normal;
+  font-weight: 100 700;
+  font-stretch: 85 100;
+}

@@ -1,0 +1,187 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: "IBM Plex Sans Roman";
+            src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/85648/IBMPlexSansVar-Roman.ttf");
+        }
+
+        :root {
+            --main-radius: 5px;
+            --main-padding: 5px;
+            --menu-color: #6e410d;
+        }
+        html {
+            font-size: 100%;
+            color: #eaeef7;
+            font-family: "IBM Plex Sans Roman", Times;
+            box-sizing: border-box;
+          }
+          .container{
+            background-color: aqua;
+            width: 100%;
+
+        }
+          nav {
+            border-radius: var(--main-radius);
+            padding-top: var(--main-padding);
+            height: 150px;
+            border: .3rem solid white;
+            background-color: burlywood;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        nav>div {
+            margin: 0;
+            padding: 1em 0;
+        }
+        
+        nav>div {
+            text-decoration: none;
+            color: white;
+            position: relative;
+            transition: all ease-in-out 500ms;
+        }
+        
+        nav>div::after {
+            content: '';
+            position: absolute;
+            display: block;
+            height: .4em;
+            width: 0%;
+            background-color: var(--menu-color);
+            bottom: -1em;
+            transition: all ease-in-out 500ms;
+        }
+        
+        nav>div:hover {
+            color: var(--menu-color);
+        }
+        
+        nav>div:hover::after {
+            width: 80%;
+        }
+        
+        nav>div:first-child {
+            margin-right: auto;
+            margin-left: .5em;
+            margin-top: -.25em;
+        }
+        .mitem {
+            margin: 0;
+            color: black;
+            font-size: clamp(16px, 4vw, 26px);
+            font-weight: 600;
+            padding-right: .75em;
+          }
+
+/*  start breathing h1
+    Weight axis: 100 – 700
+    Width axis: 85 – 100
+*/
+
+.main {
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: #B2DFDB;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 10vw;
+    font-variation-settings: 'wght' 100, 'wdth' 85;
+    animation: breathe 4000ms infinite forwards;
+}
+
+@keyframes breathe {
+    60% {
+        font-variation-settings: 'wght' 700, 'wdth' 100;
+    }
+    
+    100% {
+        font-variation-settings: 'wght' 100, 'wdth' 85;
+    }
+}
+
+
+{{/*  animation not working ;-(  */}}
+.example-element {
+    background-color: #cfe221;
+    margin: 20px;
+    border: 5px solid #333;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    animation: 3s linear 1s infinite alternate slidein;
+}
+@keyframes slidein {
+    0% {
+        margin-left:100%;
+    }
+    100%{
+        margin-right:75%;
+    }
+}
+
+.bouncebox {
+    width: 400px;
+    height: 250px;
+    animation: pulse 5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: #000913;
+    }
+    100% {
+      background-color: #9ab5d4ce;
+    }
+  }
+
+    #watchme {
+    animation-duration: 3s;
+    animation-name: slidein2;
+    animation-iteration-count: 5;
+    animation-direction: alternate;
+    color:darkblue;
+    background-color: darkgrey;
+  }
+  
+  @keyframes slidein2 {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+    
+    to {
+      margin-left:0%;
+      width:100%;
+    }
+  }
+</style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+<div class="mitem">Home</div><div class="mitem">Blog</div><div class="mitem">Campsites</div><div class="mitem">Contact Us</div><div class="mitem">About</div>
+        </nav>
+        <div class="main">
+            <h1>Breathing</h1>
+        </div>
+        <div class="bouncebox">
+            <div class="example-element" style="animation: 0.5s linear 1s infinite alternate none running slidein;"></div>
+        </div>
+        <h1 id="watchme">Watch me move</h1>
+      
+    </div>
+
+</body>
+</html>
